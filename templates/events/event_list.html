@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1> Total Number of events : {{ all_events.count }} </h1>
+    
+    
+    
+    
+    <div class="columns">
+    {% for event in events %}
+    <div class="column is-12-tablet is-6-desktop is-4-widescreen">
+         
+    <article class="box">
+        <div class="media">
+            <aside class="media-left">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"  width="80">
+            </aside>
+            
+            <div class="media-content">
+                <p class="title is-5 is-spaced is-marginless">
+                    <a href="#">
+                        {{ event.title }}
+                    </a>
+                    
+                </p>
+                <p class="subtitle is-marginless">
+                  <h3>Location : </h3>  {{ event.location }}
+                </p>
+                <div class="content is-small">
+                    {{ event.description }}
+                    <br>
+                    {{ event.organizer }}
+                </div>
+            </div>
+            
+        </div>
+    </article>
+    </div>
+    {% endfor %}
+    </div>
+    
+    
+    
+    
+
+
+{% endblock content %}
